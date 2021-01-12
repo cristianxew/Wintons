@@ -1,0 +1,21 @@
+.woo-next-checkout-form {
+  margin-top: 10rem;
+
+  @media screen and (max-width: 576px) {
+    margin-top: 5rem;
+  }
+
+
+  h2 {
+    font-weight: bold;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.empty-checkout {
+  margin-top: 10rem;
+}

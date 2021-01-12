@@ -1,0 +1,27 @@
+@import "../../../sass/essentials";
+
+
+.content-wrap-cart {
+  @include mq($until: large) {
+    margin-bottom: 3rem;
+  }
+}
+
+.woo-next-cart-wrapper {
+  margin-top: 10rem;
+  /* .woo-next-cart-table{
+        @include mq($until: small){
+            
+        }
+    } */
+}
+
+.woo-next-cart-total-container {
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.cart-page-empty {
+  margin-top: 10rem;
+}

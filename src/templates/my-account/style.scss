@@ -1,0 +1,17 @@
+@import "../../sass/essentials";
+
+.forms-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .center-line {
+    height: 400px;
+    width: 1px;
+    background-color: #B7B6BE;
+
+    @include mq($until: medium) {
+      display: none;
+    }
+  }
+}

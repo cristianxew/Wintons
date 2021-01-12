@@ -1,0 +1,185 @@
+@import "../../../sass/essentials";
+
+.section-services {
+  position: relative;
+
+  //padding: 0 !important;
+  .number-tag-3 {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    letter-spacing: 2px;
+    color: #e8e8e8;
+    font-size: 3rem;
+
+    @include mq($until: small) {
+      display: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include mq($until: small) {
+      align-items: center;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      color: #B7B6BE;
+      text-transform: uppercase;
+
+      @include mq($until: small) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h1 {
+      color: #222831;
+      text-transform: uppercase;
+
+      @include mq($until: small) {
+        font-size: 2rem;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #e8e8e8;
+      width: 240px;
+      height: 2px;
+      bottom: 0;
+      left: -14px;
+
+      @include mq($until: small) {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  &__content {
+    margin: 3rem 0 4rem;
+    background-color: #f7f7f7;
+    padding: 1rem;
+
+    @include mq($until: small) {
+      margin: 3rem 0 2.5rem;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 340px;
+      padding: 2rem;
+      color: #222831;
+
+      @include mq($until: large) {
+        height: auto;
+      }
+
+      @include mq($until: small) {
+        text-align: center;
+        padding: 2rem 2rem 0;
+      }
+
+      div {
+        width: 100%;
+
+        @include mq($until: medium) {
+          margin-bottom: 1.5rem;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+
+          @include mq($until: small) {
+            width: 42px;
+            height: 42px;
+          }
+        }
+
+        svg {
+          fill: #CB2A34;
+          font-size: 3.2rem;
+
+          @include mq($until: small) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      h2 {
+        max-width: 260px;
+
+        @include mq($until: large) {
+          max-width: 100%;
+        }
+
+        @include mq($until: small) {
+          font-size: 1.6rem;
+        }
+      }
+
+      p {
+        letter-spacing: 0.8px;
+        line-height: 1.6rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.section-services-footer {
+  margin-bottom: 4rem;
+
+  @include mq($until: small) {
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include mq($until: small) {
+      justify-content: space-evenly;
+    }
+
+    & a:first-child {
+      margin-right: 1rem;
+
+      @include mq($until: small) {
+        margin-right: 0rem;
+      }
+    }
+
+    & a:last-child {
+      margin-left: 1rem;
+
+      @include mq($until: small) {
+        margin-left: 0rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #e8e8e8;
+      z-index: -1;
+    }
+  }
+}

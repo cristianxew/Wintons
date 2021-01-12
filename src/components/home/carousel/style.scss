@@ -1,0 +1,109 @@
+@import "../../../sass/essentials";
+
+.carousel-img-wrap {
+  position: relative;
+
+  img {
+    margin-bottom: -0.5rem;
+    height: calc(100vh - 130px);
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.carousal-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: RGBA(73, 73, 94, 0.4);
+  //background: linear-gradient(90deg, #ffffff -30%, rgba(0, 212, 255, 0) 80%);
+}
+
+.carousal-info-inner {
+  width: 100%;
+  color: #f7f7f7;
+
+  @include mq($until: medium) {
+    text-align: center;
+    height: 60%;
+  }
+
+  &-title {
+    text-transform: capitalize;
+    font-size: 3.5rem;
+
+    @include mq($until: medium) {
+      font-size: 3rem;
+    }
+
+    @include mq($until: small) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    max-width: 450px;
+    letter-spacing: 1.5px;
+    //font-weight: 300;
+
+    @include mq($until: medium) {
+      display: none;
+    }
+  }
+
+  h2 {
+    @include mq($until: medium) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  a {
+    transition: 0.5s;
+  }
+}
+
+.slick-prev {
+  left: 1rem !important;
+  z-index: 10;
+
+  @include mq($until: small) {
+    left: 0.5rem !important;
+  }
+
+  &::before {
+    font-size: 32px;
+
+    @include mq($until: small) {
+      font-size: 22px;
+    }
+  }
+}
+
+.slick-next {
+  right: 1.5rem !important;
+  z-index: 10;
+
+  @include mq($until: small) {
+    right: 0.5rem !important;
+  }
+
+  &::before {
+    font-size: 32px;
+
+    @include mq($until: small) {
+      font-size: 22px;
+    }
+  }
+}
+
+
+.slick-slide.slick-active {
+  z-index: 1;
+}

@@ -1,0 +1,130 @@
+@import "../../../sass/essentials";
+
+.featured-products-section {
+  position: relative;
+  margin-bottom: 5rem;
+
+  @include mq($until: small) {
+    margin-bottom: 2.5rem;
+  }
+
+  .number-tag {
+    position: absolute;
+    top: 4.5rem;
+    left: 1.5rem;
+    letter-spacing: 2px;
+    color: #e8e8e8;
+    font-size: 3rem;
+
+    @include mq($until: small) {
+      display: none;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #222831;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+
+    @include mq($until: small) {
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      color: #B7B6BE;
+
+      @include mq($until: small) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h1 {
+      @include mq($until: small) {
+        font-size: 2rem;
+      }
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #B7B6BE;
+      width: 2px;
+      height: 30px;
+      left: 50%;
+    }
+
+    &::after {
+      bottom: -1.5rem;
+    }
+
+    &::before {
+      top: -2rem;
+    }
+  }
+
+  .product-featured-row {
+
+    .product-wrapper {
+      transition: all 0.5s ease;
+      margin-bottom: 0 !important;
+      padding: 10px;
+
+      &:hover {
+        box-shadow: 0 2px 20px rgba(0, 0, 0, .1);
+      }
+
+
+      product-image,
+      .product-image span,
+      .product-image img {
+        display: block;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+
+        @include mq($until: xlarge) {
+          height: 290px;
+        }
+
+        @include mq($from: small, $until: medium) {
+          height: 400px;
+        }
+
+      }
+
+      .card-body {
+        padding: 10px;
+
+        .card-header {
+          background: none;
+          border: 0;
+          font-size: 18px;
+          padding: 0;
+          // margin-bottom: 15px;
+        }
+
+        .card-name-price-wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          .card-subtitle {
+            margin-top: 20px;
+            font-size: 16px;
+          }
+        }
+
+      }
+
+    }
+  }
+}

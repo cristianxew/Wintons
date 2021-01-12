@@ -1,0 +1,484 @@
+//@import "../../fonts/fonts.css";
+@import "../../sass/essentials";
+@import "./../../sass/vendor/hamburger/hamburgers.scss";
+
+.site-header-container-sticky {
+  background-color: #f7f7f7 !important;
+  box-shadow: 0 8px 8px -4px rgba(40, 44, 63, 0.09);
+  transform: translateY(-48px);
+
+  @include mq($until: small) {
+    transform: translateY(-45px);
+  }
+
+  .container {
+
+
+    .site-header {
+
+      .menu-visible {
+        .header-nav__wrap {
+          background-color: #f7f7f7;
+        }
+      }
+    }
+  }
+
+}
+
+.site-header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
+  background-color: #ffffff;
+  z-index: 15;
+
+
+  &.container {
+    @include mq($until: medium) {
+      max-width: initial;
+    }
+  }
+
+}
+
+.header-top-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 10px;
+  border-bottom: 1px solid #B7B6BE;
+  margin-left: auto;
+
+
+  @include mq($until: small) {
+    padding: 10px 0px 10px;
+  }
+
+  &-contact {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      address {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+
+        svg {
+          font-size: 24px;
+          margin-right: 8px;
+          color: #CB2A34;
+
+          @include mq($until: small) {
+            font-size: 16px;
+            margin-right: 4px;
+          }
+        }
+
+        a {
+          color: #222831;
+          letter-spacing: 1px;
+
+          @include mq($until: small) {
+            font-size: 12px;
+          }
+
+          @include mq($until: medium) {
+            letter-spacing: 0;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        margin-right: 2rem;
+
+        @include mq($until: medium) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  &-social {
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 1rem;
+
+        @include mq($until: medium) {
+          margin-right: 0.5rem;
+        }
+
+        a {
+          svg {
+            fill: #222831;
+            transition: all 0.3s ease;
+
+            @include mq($until: small) {
+              width: 16px;
+            }
+
+            &:hover {
+              fill: #CB2A34
+            }
+
+          }
+
+        }
+
+        &:nth-child(4) {
+
+          a {
+            svg {
+              font-size: 24px;
+
+              @include mq($until: small) {
+                font-size: 18px;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+
+  @include mq(medium) {
+    align-items: center;
+    padding: 10px 0;
+  }
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+
+  figure {
+    margin-bottom: 0;
+  }
+
+  .site-brand__logo {
+    width: 220px;
+
+    @include mq($until: large) {
+      padding: 0.5rem 0;
+    }
+
+    @include mq($until: small) {
+      width: 150px;
+    }
+  }
+}
+
+// Menu
+.header-nav {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  right: -100vw;
+  transition: 0.3s all;
+  height: calc(100vh - 80px);
+  border-top: 1px solid $color__border;
+  width: 74%;
+  z-index: 10;
+  margin-right: 0;
+
+  &.menu-visible {
+    right: -8rem;
+
+    @include mq($until: large) {
+      width: 60%;
+    }
+
+    @include mq($until: small) {
+      top: 60px;
+      right: -2rem;
+      height: calc(100vh - 60px);
+    }
+  }
+
+  @include mq(large) {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    position: static;
+    top: 0;
+    height: auto;
+    border: none;
+  }
+
+  .header-nav__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.3s ease;
+
+
+    @include mq($until: large) {
+      background-color: white;
+    }
+
+    @include mq(large) {
+      flex-direction: row;
+      align-items: center;
+      width: auto;
+
+    }
+  }
+
+  // Main menu list
+  .header-nav__menu-item {
+    padding: 18px 16px;
+    //color: #757575;
+    position: relative;
+    border: 1px solid #B7B6BE;
+    transition: 0.3s;
+
+    &:last-child &__active-checkout {
+      border: 2px solid #CB2A34;
+    }
+
+    @include mq($until: large) {
+      padding: 8px 16px;
+
+      svg {
+        display: none;
+      }
+    }
+
+    .header-nav__toggle-menu-btn {
+      padding-left: 3px;
+      margin-top: -6px;
+    }
+
+    &.menu-has-children .header-nav__toggle-menu-btn::after {
+      content: "+";
+      position: absolute;
+      right: 10px;
+      width: 25px;
+      text-align: center;
+      vertical-align: middle;
+      top: 10px;
+      font-size: 20px;
+      cursor: pointer;
+
+      @include mq(large) {
+        content: "";
+      }
+    }
+
+    &.child-menu-open .header-nav__toggle-menu-btn::after {
+      content: "-";
+    }
+
+    @include mq(large) {
+      border: none;
+    }
+
+    &:last-child {
+      border: 1px solid #222831;
+      border-radius: 9999px;
+      width: 100px;
+      text-align: center;
+      vertical-align: middle;
+      margin: 16px 0 0 16px;
+      padding: 4px 16px;
+
+      @include mq(large) {
+        margin: 0;
+        margin-right: 16px;
+      }
+
+      &:hover {
+        background-color: #CB2A34;
+        // border-color: #222831;
+
+        a {
+          color: $white;
+        }
+      }
+
+      .header-nav__menu-item__active-checkout {
+        color: #CB2A34;
+      }
+
+      a {
+        padding: 4px 0;
+        display: flex;
+        justify-content: center;
+
+        &:after {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &:hover .header-nav__submenu {
+      display: block;
+    }
+
+    // Main Menu link
+    .header-nav__menu-link {
+      display: flex;
+      padding: 10px;
+      white-space: nowrap;
+      color: #222831;
+
+      &-active {
+        color: #CB2A34;
+      }
+
+      @include mq(large) {
+        display: inline-block;
+        padding: 0;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 55px;
+          left: 0;
+          right: 0;
+          width: 71%;
+          margin: auto;
+          height: 1px;
+          transform: scaleX(0);
+          background-color: #000000;
+          transition: transform 0.3s;
+        }
+
+        &:hover {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  // Submenu
+  .header-nav__submenu {
+    background-color: $white;
+    z-index: 1;
+    padding-left: 10px;
+
+    // For slide down effect in mobile
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 500ms ease;
+    -moz-transition: max-height 500ms ease;
+    -o-transition: max-height 500ms ease;
+    transition: max-height 500ms ease;
+
+    // When the submenu is open.
+    &.child-menu-open {
+      max-height: 150px;
+    }
+
+    @include mq(large) {
+      position: absolute;
+      display: none;
+      top: 80px;
+      left: 0;
+      width: 200px;
+      border: 1px solid $color__border;
+      box-shadow: 2px 2px 2px $color__box-shadow;
+      padding: 0 10px;
+      overflow: visible;
+      max-height: 300px;
+    }
+
+    &>li {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    // Submenu Menu link
+    .header-nav__submenu-link {
+      display: block;
+      padding: 5px;
+      color: $color__text;
+
+      &-active {
+        color: #CB2A34;
+      }
+
+      @include mq(large) {
+        display: inline-block;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.header-nav__menu-btn {
+  @include mq(large) {
+    display: none;
+  }
+}
+
+/* .mobile-menu-open {
+  //position: fixed;
+}
+ */
+.site-brand__description {
+  margin-bottom: 0;
+}
+
+.header-nav__menu-link-container-with-arrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-icon-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.wishlist-menu {
+  position: relative;
+  padding-right: 10px;
+  transition: all 0.8s ease;
+
+  &-active svg path {
+    fill: #CB2A34;
+  }
+
+  svg {
+    &:hover path {
+      fill: #CB2A34;
+    }
+  }
+}
+
+.wishlist-count {
+  top: -8px;
+  left: 13px;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 16px;
+  color: #fff;
+  min-height: 16px;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: #868484;
+  position: absolute;
+}

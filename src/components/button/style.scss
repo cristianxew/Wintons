@@ -1,0 +1,128 @@
+@import "../../sass/essentials";
+
+.button {
+  padding: 14px 32px;
+  letter-spacing: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+
+  @include mq($until: small) {
+    padding: 10px 24px;
+  }
+
+  &__red {
+    color: #e8e8e8;
+    background-color: #CB2A34;
+
+    &:hover {
+      background-color: #222831;
+    }
+
+    &-fluid {
+      width: 100%;
+    }
+
+    &-outline {
+      letter-spacing: 1px;
+      color: #CB2A34;
+      padding: 8px 16px;
+      border: 1px solid #CB2A34;
+      background-color: transparent;
+      margin-top: 1rem;
+      margin-left: 10px;
+
+      &:hover {
+        background-color: #CB2A34;
+        color: #e8e8e8;
+      }
+    }
+  }
+
+  &__gray {
+    color: #222831;
+    background-color: #e8e8e8;
+
+    &:hover {
+      background-color: #222831;
+      color: #e8e8e8;
+    }
+
+    &-lts-sm {
+      letter-spacing: 1px;
+    }
+  }
+
+  &__black {
+    padding: 12px 28px;
+    background-color: #222831;
+    color: #e8e8e8;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: #CB2A34
+    }
+
+    &-outline {
+      letter-spacing: 1px;
+      border: 1px solid #222831;
+      background-color: transparent;
+      padding: 8px 16px;
+      color: #222831;
+
+      &:hover {
+        background-color: #222831;
+        color: #e8e8e8;
+      }
+
+      &-mt0 {
+        margin-top: 0;
+      }
+    }
+
+    &-lts-sm {
+      letter-spacing: 1px;
+    }
+  }
+
+  &__outline-red {
+    background-color: transparent;
+    border: 1px solid #CB2A34;
+    color: #CB2A34;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    &:hover {
+      background-color: #CB2A34;
+      color: #e8e8e8;
+    }
+  }
+
+  &__outline-red-2 {
+    color: #CB2A34;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: white;
+    border: 2px solid #e8e8e8;
+
+    &:hover {
+      background-color: #CB2A34;
+      color: #e8e8e8;
+    }
+  }
+
+  &__outline-black {
+    border: 2px solid #B7B6BE;
+    width: 100%;
+
+    &:hover {
+      background-color: #222831;
+      color: #e8e8e8;
+    }
+  }
+}

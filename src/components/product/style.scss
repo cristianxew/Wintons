@@ -1,0 +1,56 @@
+@import "../../sass/essentials";
+
+.product-image,
+.product-image span,
+.product-image img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+
+  @include mq($until: xlarge) {
+    height: 290px;
+  }
+
+  @include mq($from: small, $until: medium) {
+    height: 400px;
+  }
+
+}
+
+.product-container {
+
+  .card-body {
+    padding: 10px;
+
+    .card-header {
+      background: none;
+      border: 0;
+      font-size: 18px;
+      padding: 0;
+      // margin-bottom: 15px;
+    }
+
+    .card-name-price-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .card-subtitle {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+
+  &>* {
+    transition: 0.5s;
+    padding-top: 16px;
+
+    &:hover {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+    }
+  }
+}

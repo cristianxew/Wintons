@@ -1,0 +1,174 @@
+@import "../../../sass/essentials";
+
+.our-work-section {
+  position: relative;
+
+  .number-tag-2 {
+    position: absolute;
+    top: 4.5rem;
+    left: 1.5rem;
+    letter-spacing: 2px;
+    color: #e8e8e8;
+    font-size: 3rem;
+
+    @include mq($until: small) {
+      display: none;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #222831;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+
+    @include mq($until: small) {
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      color: #B7B6BE;
+
+      @include mq($until: small) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h1 {
+      @include mq($until: small) {
+        font-size: 2rem;
+      }
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #B7B6BE;
+      width: 2px;
+      height: 30px;
+      left: 50%;
+
+      @include mq($until: small) {
+        height: 20px;
+      }
+    }
+
+    &::after {
+      bottom: -1.5rem;
+    }
+
+    &::before {
+      top: -2rem;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    height: 575px;
+
+    @include mq($until: medium) {
+      flex-direction: column;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    @include mq($from: medium, $until: large) {
+      height: 460px;
+    }
+
+    &__content {
+      background-color: #F7F7F7;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 0 !important;
+
+      article {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mq($until: medium) {
+          padding: 1.5rem 0;
+        }
+
+        .our-work-section__inner__content-title {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #CB2A34;
+          letter-spacing: 4px;
+        }
+
+        .line {
+          margin: 0 auto;
+          width: 80px;
+          height: 1px;
+          background-color: #B7B6BE;
+
+          @include mq($until: medium) {
+            margin: 1rem 0;
+          }
+        }
+
+        h2,
+        p {
+          color: #222831;
+        }
+
+        h2 {
+          @include mq($until: small) {
+            font-size: 1.6rem;
+          }
+        }
+
+        p {
+          max-width: 60%;
+
+          @include mq($until: small) {
+            max-width: 80%;
+          }
+        }
+      }
+    }
+
+    &__img {
+      padding: 0 !important;
+      width: 100%;
+      height: 100%;
+
+      @include mq($until: small) {
+        height: 330px;
+      }
+
+      @include mq($from: small, $until: medium) {
+        height: 450px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+
+      @include mq($until: medium) {
+        flex-direction: column;
+      }
+    }
+  }
+}

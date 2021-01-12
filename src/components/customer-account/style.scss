@@ -1,0 +1,74 @@
+@import "../../sass/essentials";
+
+.account-details{
+  position: relative;
+}
+.my-account-container{
+  .account-details-menu{
+    &:nth-child(1) .tabitem{
+      padding-top: 0;
+    }
+    .tabitem {
+      cursor: pointer;
+      padding: 5px 0;
+  
+      button{
+        p{
+          margin: 4px 0;
+        }
+        @include mq($until: medium){
+          padding: 12px;
+        }
+      }
+  
+    }
+    .tabitem--inactive {
+      opacity: 0.5;
+      filter: grayscale(100%);
+    }
+    
+    .tabitem__icon {
+      font-size: 22px;
+    }
+    
+    .tabitem__title {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    
+    .content {
+      margin-top: 15px;
+    }
+  }
+  .account-details-content {
+    min-height: 355px;
+    background-color: #f7f7f7;
+    @include mq($until: small){
+      margin: 1rem 1rem 3rem;
+    }
+  }
+}
+
+.billing-address{
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.shipping-address{
+  h4{
+    margin-top: 1rem;
+  }
+  p{
+    margin-bottom: 0;
+  }
+}
+
+
+/* .logout-button{
+  @include mq($until: small){
+    position: absolute;
+    bottom: -170%;
+    left: 50%;
+  }
+} */
