@@ -1,99 +1,105 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+- A Gatsby e-commerce site with WooCommerce, using Decoupled Architecture
+- Front end in React
+- Backend in WordPress.
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[Demo Site](https://gatsby-woocommerce-site.cristianxew.vercel.app/)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+This site uses `gatsby-source-wordpress@v4 BETA`
 
-## 🚀 Quick start
+## Features
 
-1.  **Create a Gatsby site.**
+1. Uses React with Gatsby ( Blazing Fast )
+2. PWA ( Works Offline )
+3. Image Optimization ( blur effect )
+4. GraphQL ( with wp-graphql on WordPress )
+5. Custom Widgets, Menus, Social elements.
+6. WooCommerce store
+7. Google Analytics feature
+8. Yoast SEO supported ( with og tags )
+9. Product Search with pagination ( even works offline )
+10. Product pagination
+11. Archive pages.
+12. Authentication with JWT
+13. My Account page ( with Login and Registration )
+14. Create an account on checkout.
+15. Social share.
+16. Product Carousel.
+17. Add to wishlist( even works offline )
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## 🚀 Set Up
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+- Fork/clone the repo
+- yarn install
 
-1.  **Start developing.**
+### Gatsby Setup ( when using this repo as your project)
 
-    Navigate into your new site’s directory and start it up.
+1. Server Side Enviromnent Variables.
+   Create a file called `.env` taking example from `.env-example` and add the following into `site` directory :
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+- `WORDPRESS_SITE_URL=https://example.com`
+- `GATSBY_SITE_URL=https://example.com`
+- `GOOGLE_TAGMANAGER_ID=xxx`
+- `FB_APP_ID=xxx`
 
-1.  **Open the source code and start editing!**
+2. Client Side Environment Variables.
+   Create two more files called `.env.development` `.env.production` and into 'site' directory and add your WordPress site url liks so.
 
-    Your site is now running at `http://localhost:8000`!
+```shell script
+GATSBY_WORDPRESS_SITE_URL=https://example.com
+```
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+Env variables from these file will be consumed by Apollo client on client side.
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### WordPress Setup
 
-## 🧐 What's inside?
+1. On your WordPress site, download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+a. [Headless CMS](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/headless-cms.zip)
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+b. [woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/woocommerce.4.4.1.zip)
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+c. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+d. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+e. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+f. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+h. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-jwt-authentication.zip)
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- You can follow the readme to setup [https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup](https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup)
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+2. - Set Header menu as `HCMS Header Menu`
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+   ![](demos/header-menu-demo.png)
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+   - Set Footer menu as `HCMS Footer Menu`
+     ![](demos/footer-menu-demo.png)
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+3. You can also set text widgets in #HCMS Footer #1 and #HCMS Footer #2 under Appearance > Widgets in WordPress.
+4. Create a Home Page ( if there isn't one already )and make sure you have a home page and Location rule is set to Home page.
+5. If isn't already set your site title, description and logo from WordPress customizer.
+6. Setup WooCommerce:
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+- Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
+- You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
 
-## 🎓 Learning Gatsby
+7. For home page carousel please upload same size product category images of dimensions `1900x600`
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+## 🚀 Development
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- Navigate into site’s directory.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+```shell
+yarn install      # Run this for the first time.
+npm run dev      # During development.
+npm run build    # When ready for production.
+```
 
-## 💫 Deploy
+** For development **
+Your site is now running at `http://localhost:8000`!
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+_Note: You'll also see a second link: _`http://localhost:8000/___graphql`\_. This is a tool you can use to experiment with querying your data.
